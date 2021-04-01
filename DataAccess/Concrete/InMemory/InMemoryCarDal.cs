@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace DataAccess.Concrete.InMemory
 {
@@ -66,6 +67,11 @@ namespace DataAccess.Concrete.InMemory
 			carToUpdate.DailyPrice = car.DailyPrice;
 			carToUpdate.Description = car.Description;
 			carToUpdate.BrandId = car.BrandId;
+		}
+
+		public List<CarDetailDto> GetCarDetails()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
