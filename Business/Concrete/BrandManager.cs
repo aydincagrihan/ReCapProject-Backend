@@ -42,9 +42,11 @@ namespace Business.Concrete
 			return new SuccessDataResult<List<Brand>>(_brandDal.GetAll(), Messages.BrandListed);
 		}
 
-		//public Brand GetById(int brandId)
-		//{
-		//	return _brandDal.Get(b => b.BrandId == brandId);
-		//}
+		public IDataResult<Brand> GetById(int id)
+		{
+			return new SuccessDataResult<Brand>(_brandDal.Get(b => b.BrandId == id));
+		}
+
+		
 	}
 }
