@@ -20,6 +20,7 @@ namespace Business.Concrete
 		{
 			_userDal = userDal;
 		}
+		//validation
 		[ValidationAspect(typeof(UserValidator))]
 		public IResult Add(User user)
 		{
