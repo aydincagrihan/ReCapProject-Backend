@@ -32,5 +32,6 @@ namespace Business.Constants
 		internal static string UserAdded;
 		internal static string UserDeleted;
 		internal static string UserUpdated;
+		internal static string CustomerNotAdded;
 	}
 }
