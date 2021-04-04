@@ -1,6 +1,7 @@
 ﻿using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Text;
 using Core.Utilities.Results;
 using Entities.DTOs;
@@ -20,6 +21,8 @@ namespace Business.Abstract
 		IDataResult<List<CarDetailDto>> GetCarDetailsByColorName(string colorName);
 
 		IDataResult<List<CarDetailDto>> GetCarDetailsByBrandNameAndColorName(string brandName, string colorName);
+
+		//IDataResult<List<CarDetailDto>> GetCarDetails(Expression<Func<CarDetailDto>> filter = null);
 
 		IDataResult<List<Car>> GetCarsByBrandId(int brandId);
 

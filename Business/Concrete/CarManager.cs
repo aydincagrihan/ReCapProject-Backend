@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using Business.Abstract;
 using Business.Constants;
@@ -42,7 +44,7 @@ namespace Business.Concrete
 		}
 		public IDataResult<List<Car>> GetAll()
 		{
-			if (DateTime.Now.Hour == 23)
+			if (DateTime.Now.Hour == 20)
 			{
 				return new ErrorDataResult<List<Car>>(Messages.MaintenanceTime);
 			}
@@ -88,5 +90,10 @@ namespace Business.Concrete
 			return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails(c =>
 				c.BrandName == brandName && c.ColorName == colorName));
 		}
+
+		//public IDataResult<List<CarDetailDto>> GetCarDetails(Expression<Func<CarDetailDto>> filter = null)
+		//{
+		//	return new SuccessDataResult<List<CarDetailDto>>(_carDal.GetCarDetails());
+		//}
 	}
 }
