@@ -24,6 +24,6 @@ namespace Business.Abstract
 
 		IResult IsRentable(Rental rental);
 
-		//IResult CheckFindeksScoreSufficiency(Rental rental);
+		
     }
 }
