@@ -33,5 +33,9 @@ namespace Business.Constants
 		internal static string UserDeleted;
 		internal static string UserUpdated;
 		internal static string CustomerNotAdded;
+		internal static string CarImageCountOfCarError;
+		internal static string CarImageDeleted;
+		internal static string CarImageUpdated;
+		internal static string CarImageAdded;
 	}
 }
