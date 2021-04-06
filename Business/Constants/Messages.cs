@@ -1,6 +1,7 @@
 ﻿using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -37,5 +38,6 @@ namespace Business.Constants
 		internal static string CarImageDeleted;
 		internal static string CarImageUpdated;
 		internal static string CarImageAdded;
+		internal static string? AuthorizationDenied;
 	}
 }
