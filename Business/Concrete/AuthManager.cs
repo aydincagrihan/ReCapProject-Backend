@@ -59,11 +59,11 @@ namespace Business.Concrete
 
         public IResult UserExists(string email)
         {
-            if (_userService.GetByMail(email) != null)
-            {
-                return new ErrorResult(Messages.UserAlreadyExists);
-            }
-            return new SuccessResult();
+	        if (_userService.GetByMail(email).Data != null)
+	        {
+		        return new ErrorResult(Messages.UserAlreadyExists);
+	        }
+	        return new SuccessResult();
         }
 
         public IDataResult<AccessToken> CreateAccessToken(User user)
@@ -71,6 +71,21 @@ namespace Business.Concrete
 	        var claims = _userService.GetClaims(user);
 	        var accessToken = _tokenHelper.CreateToken(user, claims.Data);
 	        return new SuccessDataResult<AccessToken>(accessToken, Messages.AccessTokenCreated);
+        }
+
+        [SecuredOperation("user")]
+        public IResult IsAuthenticated(string userMail, List<string> requiredRoles)
+        {
+	        if (requiredRoles != null)
+	        {
+		        var user = _userService.GetByMail(userMail).Data;
+		        var userClaims = _userService.GetClaims(user).Data;
+		        var doesUserHaveRequiredRoles =
+			        requiredRoles.All(role => userClaims.Select(userClaim => userClaim.Name).Contains(role));
+		        if (!doesUserHaveRequiredRoles) return new ErrorResult(Messages.AuthorizationDenied);
+	        }
+
+	        return new SuccessResult();
         }
     }
 }
