@@ -18,6 +18,6 @@ namespace Business.Abstract
 
 		IDataResult<AccessToken> CreateAccessToken(User user);
 
-		IResult IsAuthenticated(string userMail, List<string> requiredRoles);
+		//IResult IsAuthenticated(string userMail, List<string> requiredRoles);
 	}
 }
