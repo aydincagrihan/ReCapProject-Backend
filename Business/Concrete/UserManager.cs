@@ -28,7 +28,7 @@ namespace Business.Concrete
 		[SecuredOperation("user.get,moderator,admin")]
 		public IDataResult<User> GetById(int id)
 		{
-			return new SuccessDataResult<User>(_userDal.Get(u => u.Id == id));
+			return new SuccessDataResult<User>(_userDal.Get(u => u.UserId == id));
 		}
 
 		public IDataResult<List<OperationClaim>> GetClaims(User user)
@@ -71,6 +71,11 @@ namespace Business.Concrete
 		{
 			_userDal.Delete(user);
 			return new SuccessResult(Messages.UserDeleted);
+		}
+
+		public IResult UpdateUserDetails(UserDetailForUpdateDto userDetailForUpdate)
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

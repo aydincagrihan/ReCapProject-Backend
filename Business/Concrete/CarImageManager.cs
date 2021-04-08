@@ -85,7 +85,8 @@ namespace Business.Concrete
 
 		private void IfCarImageOfCarNotExistsAddDefault(ref List<CarImage> result)
 		{
-			if (!result.Any()) result.Add(CreateDefaultCarImage());
+			if (result.Any()) return;
+			result.Add(CreateDefaultCarImage());
 		}
 
 		private void IfCarImageOfCarNotExistsAddDefault(ref CarImage result)

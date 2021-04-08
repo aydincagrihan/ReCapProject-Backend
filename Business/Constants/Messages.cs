@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Entities.Concrete;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
@@ -32,18 +33,25 @@ namespace Business.Constants
 		internal static string RentalNotAvailable;
 		internal static string UserAdded;
 		internal static string UserDeleted;
-		internal static string UserUpdated;
+		public static string UserUpdated = "Kullanıcı Güncellendi";
 		internal static string CustomerNotAdded;
 		internal static string CarImageCountOfCarError;
 		internal static string CarImageDeleted;
 		internal static string CarImageUpdated;
 		internal static string CarImageAdded;
-		internal static string? AuthorizationDenied;
+		internal static string AuthorizationDenied;
 		internal static string OperationClaimAdded;
 		internal static string OperationClaimUpdated;
 		internal static string OperationClaimDeleted;
 		internal static string UserOperationClaimAdded;
 		internal static string UserOperationClaimUpdated;
 		internal static string UserOperationClaimDeleted;
+		internal static string UserRegistered = "Kullanıcı eklendi";
+		internal static string UserNotFound = "Kullanıcı bulunamadı";
+		internal static string PasswordError = "Parola Hatası";
+		internal static string SuccessfullLogin = "Başarıyla giriş yapıldı";
+		internal static string AccessTokenCreated = "AccessToken Created";
+		internal static string UserAlreadyExists = "Kullanıcı sistemde mevcut";
+		internal static string SuccessfulLogin;
 	}
 }

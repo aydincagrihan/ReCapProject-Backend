@@ -18,7 +18,7 @@ namespace Business.Abstract
 
 		IResult Update(User user);
 
-		//IResult UpdateUserDetails(UserDetailForUpdateDto userDetailForUpdate);
+		IResult UpdateUserDetails(UserDetailForUpdateDto userDetailForUpdate);
 
 		IResult Delete(User user);
 

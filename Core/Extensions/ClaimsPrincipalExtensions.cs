@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Core.Extensions
 {
+	///JWT'den gelen kişinin claimlerini(rollerini) bulmak için kullanıyoruz
 	public static class ClaimsPrincipalExtensions
 	{
 		public static List<string> Claims(this ClaimsPrincipal claimsPrincipal, string claimType)

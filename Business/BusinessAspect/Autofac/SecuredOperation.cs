@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Business.BusinessAspect.Autofac
 {
+	//yetki kontrolü yaptığımız class jwt için
 	public class SecuredOperation : MethodInterception
 	{
 		private readonly IHttpContextAccessor _httpContextAccessor;

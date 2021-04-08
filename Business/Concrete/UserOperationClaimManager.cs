@@ -26,7 +26,7 @@ namespace Business.Concrete
 		[SecuredOperation("admin")]
 		public IDataResult<UserOperationClaim> GetById(int id)
 		{
-			return new SuccessDataResult<UserOperationClaim>(_userOperationClaimDal.Get(u => u.Id == id));
+			return new SuccessDataResult<UserOperationClaim>(_userOperationClaimDal.Get(u => u.UserId == id));
 		}
 
 		[SecuredOperation("admin")]
@@ -38,7 +38,7 @@ namespace Business.Concrete
 		public IResult AddUserClaim(User user)
 		{
 			var operationClaim = _operationClaimService.GetByName("user").Data;
-			var userOperationClaim = new UserOperationClaim { OperationClaimId = operationClaim.Id, UserId = user.Id };
+			var userOperationClaim = new UserOperationClaim { OperationClaimId = operationClaim.Id, UserId = user.UserId };
 			_userOperationClaimDal.Add(userOperationClaim);
 			return new SuccessResult(Messages.UserOperationClaimAdded);
 		}
@@ -63,6 +63,8 @@ namespace Business.Concrete
 			_userOperationClaimDal.Delete(userOperationClaim);
 			return new SuccessResult(Messages.UserOperationClaimDeleted);
 		}
+
+		
 	}
 
 }
