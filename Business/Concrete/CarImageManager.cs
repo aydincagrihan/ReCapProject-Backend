@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Business.Abstract;
+using Business.BusinessAspect.Autofac;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Business;
 using Core.Utilities.FileSystems;
 using Core.Utilities.Results;
@@ -45,7 +48,8 @@ namespace Business.Concrete
 
 			return new SuccessDataResult<List<CarImage>>(result);
 		}
-
+		//[SecuredOperation("car.add")]
+		[ValidationAspect(typeof(CarValidator))]
 		public IResult Add(CarImage carImage, IFormFile file)
 		{
 			var result = BusinessRules.Run(
@@ -86,7 +90,7 @@ namespace Business.Concrete
 
 		private void IfCarImageOfCarNotExistsAddDefault(ref CarImage result)
 		{
-			if (result == null) result = CreateDefaultCarImage();
+			result ??= CreateDefaultCarImage();
 		}
 
 		private CarImage CreateDefaultCarImage()
