@@ -39,11 +39,11 @@ namespace Business.DependencyResolvers.Autofac
 			builder.RegisterType<CarImageManager>().As<ICarImageService>().SingleInstance();
 			builder.RegisterType<EfCarImageDal>().As<ICarImageDal>().SingleInstance();
 
-			builder.RegisterType<OperationClaimManager>().As<IOperationClaimService>().SingleInstance();
-			builder.RegisterType<EfOperationClaimDal>().As<IOperationClaimDal>().SingleInstance();
+			//builder.RegisterType<OperationClaimManager>().As<IOperationClaimService>().SingleInstance();
+			//builder.RegisterType<EfOperationClaimDal>().As<IOperationClaimDal>().SingleInstance();
 
-			builder.RegisterType<UserOperationClaimManager>().As<IUserOperationClaimService>().SingleInstance();
-			builder.RegisterType<EfUserOperationClaimDal>().As<IUserOperationClaimDal>().SingleInstance();
+			//builder.RegisterType<UserOperationClaimManager>().As<IUserOperationClaimService>().SingleInstance();
+			//builder.RegisterType<EfUserOperationClaimDal>().As<IUserOperationClaimDal>().SingleInstance();
 
 			builder.RegisterType<AuthManager>().As<IAuthService>().SingleInstance();
 			builder.RegisterType<JwtHelper>().As<ITokenHelper>().SingleInstance();
