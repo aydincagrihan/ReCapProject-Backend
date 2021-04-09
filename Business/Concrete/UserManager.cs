@@ -31,6 +31,7 @@ namespace Business.Concrete
 			return new SuccessDataResult<User>(_userDal.Get(u => u.UserId == id));
 		}
 
+
 		public IDataResult<List<OperationClaim>> GetClaims(User user)
 		{
 			return new SuccessDataResult<List<OperationClaim>>(_userDal.GetClaims(user));
@@ -41,16 +42,19 @@ namespace Business.Concrete
 			return new SuccessDataResult<User>(_userDal.Get(u => u.Email == email));
 		}
 
+
 		public IDataResult<UserDetailDto> GetUserDetailByMail(string userMail)
 		{
 			return new SuccessDataResult<UserDetailDto>(_userDal.GetUserDetail(userMail));
 		}
+
 
 		[SecuredOperation("user.get,moderator,admin")]
 		public IDataResult<List<User>> GetAll()
 		{
 			return new SuccessDataResult<List<User>>(_userDal.GetAll());
 		}
+
 
 		public IResult Add(User user)
 		{
