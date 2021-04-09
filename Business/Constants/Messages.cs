@@ -39,7 +39,7 @@ namespace Business.Constants
 		internal static string CarImageDeleted;
 		internal static string CarImageUpdated;
 		internal static string CarImageAdded;
-		internal static string AuthorizationDenied;
+		internal static string AuthorizationDenied = "Yetkiniz yok";
 		internal static string OperationClaimAdded;
 		internal static string OperationClaimUpdated;
 		internal static string OperationClaimDeleted;
